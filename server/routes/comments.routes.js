@@ -29,40 +29,6 @@ router.post("/:id", checkAuth, async (req, res) => {
 				message: "На сервере произошла ошибка. Попробуйте позже"
 			})
 		}
-
-		// try {
-		// 	const newComment = await Comment.create({
-		// 		...req.body,
-		// 		userId: req.user._id
-		// 	})
-		// 	res.status(201).send(newComment)
-		// } catch (error) {
-		// 	res.status(500).json({
-		// 		message: "На сервере произошла ошибка. Попробуйте позже"
-		// 	})
-		// }
 	})
-
-// router.delete("/:commentId", checkAuth, async (req, res) => {
-// 	try {
-// 		const {commentId} = req.params
-// 		// const removedComment = await Comment.find({_id: commentId})
-// 		const removedComment = await Comment.findById(commentId)
-
-// 		if(removedComment.userId.toString() === req.user._id) {
-// 			await removedComment.remove()
-// 			return res.send(null)
-// 		} else {
-// 			res.status(401).json({
-// 				message: "Unauthorized"
-// 			})
-// 		}
-// 		res.status(201).send()
-// 	} catch (error) {
-// 		res.status(500).json({
-// 			message: "На сервере произошла ошибка. Попробуйте позже"
-// 		})
-// 	}
-// })
 
 module.exports = router
